@@ -1,0 +1,9 @@
+def namelist(names):
+    x= [[v for k,v in q.items()] for q in names]
+    y = [i for j in x for i in j]
+    if len(y)<1:
+        return ""
+    elif len(y)==1:
+        return str(y[0])
+    else:
+        return "{} & {}".format(str(", ".join(y[:-1])), str(y[-1]))
