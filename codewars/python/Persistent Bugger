@@ -1,0 +1,11 @@
+import numpy
+def persistence(n):
+    x=0
+    if len(str(n))==1:
+        return 0
+    else:
+        while len(str(n))>1:
+            sp = [int(i) for i in str(n)]
+            n = numpy.prod(sp)
+            x+=1
+        return x
