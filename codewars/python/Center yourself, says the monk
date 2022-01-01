@@ -1,0 +1,7 @@
+import math
+def center(strng, width, fill=' '):
+    x = (width-len(strng))/2
+    if isinstance(x,int):
+        return "{}{}{}".format( fill*x ,strng, fill*x)
+    else:
+        return "{}{}{}".format( fill*math.ceil(x) ,strng, fill*math.floor(x))

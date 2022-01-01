@@ -1,0 +1,9 @@
+def f(n):
+    print(n)
+    try:
+        if isinstance(n, int) and n>0:
+            return sum(i for i in range(n+1))
+        else:
+            return None
+    except:
+        return None
