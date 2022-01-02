@@ -159,5 +159,5 @@ public class URLifyTest {
         // Then
         assertThat(actual).isEqualTo(expected);
     }
-    
+
 }
