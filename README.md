@@ -1,4 +1,4 @@
-# Challenges-and-Interview-Question-Practice  
+# Challenges and Interview Question Practice  
 
 My solutions for coding challenge and interview style questions from various sources.
 
