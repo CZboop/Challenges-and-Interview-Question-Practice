@@ -1,9 +1,5 @@
 package ArraysAndStrings;
 
-//Check Permutation: Given two strings, write a method to decide if one is a permutation of the
-//other.
-//Hints: #7, #84, #722, #737
-
 //assuming exactly the same will not count as permutation and must have the same number of each character
 
 import java.util.*;
