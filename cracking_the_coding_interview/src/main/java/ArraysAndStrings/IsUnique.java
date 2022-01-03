@@ -1,9 +1,5 @@
 package ArraysAndStrings;
 
-//Is Unique: Implement an algorithm to determine if a string has all unique characters. What if you
-//cannot use additional data structures?
-//Hints: #44, # 777, # 7 32
-
 import java.util.HashMap;
 import java.util.Locale;
 
