@@ -1,7 +1,5 @@
 package ObjectOrientedDesignTest;
 
-import ObjectOrientedDesign.DeckOfCards.Card;
-import ObjectOrientedDesign.DeckOfCards.Deck;
 import ObjectOrientedDesign.Jukebox.Coin;
 import ObjectOrientedDesign.Jukebox.Jukebox;
 import ObjectOrientedDesign.Jukebox.JukeboxService;
