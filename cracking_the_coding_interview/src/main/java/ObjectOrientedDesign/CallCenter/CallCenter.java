@@ -14,6 +14,22 @@ public class CallCenter {
         this.calls = calls;
     }
 
+    public ArrayList<Worker> getWorkers() {
+        return workers;
+    }
+
+    public void setWorkers(ArrayList<Worker> workers) {
+        this.workers = workers;
+    }
+
+    public ArrayList<Call> getCalls() {
+        return calls;
+    }
+
+    public void setCalls(ArrayList<Call> calls) {
+        this.calls = calls;
+    }
+
     public void dispatchCall(Call call){
         List<Worker> freeRespondents = workers.stream().filter(
                 (x) -> x.getLevel() == Level.RESPONDENT
@@ -96,6 +112,10 @@ public class CallCenter {
 
     public void resolveCall(Call call){
         call.setResolved(true);
+        Optional<Worker> worker = getWorkerHandlingCall(call.getId());
+        if (worker.isPresent()){
+            worker.get().setCurrentCall(Optional.empty());
+        }
     }
 
     public void addWorker(Worker worker){
