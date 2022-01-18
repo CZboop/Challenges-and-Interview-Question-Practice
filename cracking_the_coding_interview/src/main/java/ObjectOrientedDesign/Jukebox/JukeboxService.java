@@ -10,6 +10,14 @@ public class JukeboxService {
         this.jukebox = jukebox;
     }
 
+    public Jukebox getJukebox() {
+        return jukebox;
+    }
+
+    public void setJukebox(Jukebox jukebox) {
+        this.jukebox = jukebox;
+    }
+
     public void addSong(Song song){
         if (jukebox.getRecords().size() < jukebox.getMaxRecords()){
             ArrayList<Song> recordList = jukebox.getRecords();
@@ -43,9 +51,9 @@ public class JukeboxService {
         return true;
     }
 
-    public void playSong(ArrayList<Coin> coins){
+    public String playSong(ArrayList<Coin> coins){
         if (isValidCoins(coins)){
-            System.out.println("Song is playing...");
+            return "Song is playing...";
         } else {
             throw new IllegalStateException("You did not provide enough money, this may be because some coins were not accepted");
         }
