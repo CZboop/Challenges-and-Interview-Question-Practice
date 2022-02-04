@@ -7,13 +7,13 @@ import java.util.Optional;
 
 public class Vehicle {
     private LocalDateTime timeArrived;
-    private LocalDateTime timPaidUntil;
-    private Optional<ArrayList<Ticket>> tickets;
+    private LocalDateTime timePaidUntil;
+    private ArrayList<Ticket> tickets;
     private String numberPlate;
 
-    public Vehicle(LocalDateTime timeArrived, LocalDateTime timPaidUntil, Optional<ArrayList<Ticket>> tickets, String numberPlate) {
+    public Vehicle(LocalDateTime timeArrived, LocalDateTime timePaidUntil, ArrayList<Ticket> tickets, String numberPlate) {
         this.timeArrived = timeArrived;
-        this.timPaidUntil = timPaidUntil;
+        this.timePaidUntil = timePaidUntil;
         this.tickets = tickets;
         this.numberPlate = numberPlate;
     }
@@ -26,19 +26,19 @@ public class Vehicle {
         this.timeArrived = timeArrived;
     }
 
-    public LocalDateTime getTimPaidUntil() {
-        return timPaidUntil;
+    public LocalDateTime getTimePaidUntil() {
+        return timePaidUntil;
     }
 
-    public void setTimPaidUntil(LocalDateTime timPaidUntil) {
-        this.timPaidUntil = timPaidUntil;
+    public void setTimPaidUntil(LocalDateTime timePaidUntil) {
+        this.timePaidUntil = timePaidUntil;
     }
 
-    public Optional<ArrayList<Ticket>> getTickets() {
+    public ArrayList<Ticket> getTickets() {
         return tickets;
     }
 
-    public void setTicket(Optional<ArrayList<Ticket>> tickets) {
+    public void setTicket(ArrayList<Ticket> tickets) {
         this.tickets = tickets;
     }
 
@@ -55,19 +55,19 @@ public class Vehicle {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Vehicle vehicle = (Vehicle) o;
-        return Objects.equals(timeArrived, vehicle.timeArrived) && Objects.equals(timPaidUntil, vehicle.timPaidUntil) && Objects.equals(tickets, vehicle.tickets) && Objects.equals(numberPlate, vehicle.numberPlate);
+        return Objects.equals(timeArrived, vehicle.timeArrived) && Objects.equals(timePaidUntil, vehicle.timePaidUntil) && Objects.equals(tickets, vehicle.tickets) && Objects.equals(numberPlate, vehicle.numberPlate);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(timeArrived, timPaidUntil, tickets, numberPlate);
+        return Objects.hash(timeArrived, timePaidUntil, tickets, numberPlate);
     }
 
     @Override
     public String toString() {
         return "Vehicle{" +
                 "timeArrived=" + timeArrived +
-                ", timPaidUntil=" + timPaidUntil +
+                ", timPaidUntil=" + timePaidUntil +
                 ", ticket=" + tickets +
                 ", numberPlate='" + numberPlate + '\'' +
                 '}';

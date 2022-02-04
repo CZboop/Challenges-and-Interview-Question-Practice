@@ -12,6 +12,10 @@ public class ParkingLotService {
         this.lot = lot;
     }
 
+    public Lot getLot() {
+        return lot;
+    }
+
     public void addVehicle(Vehicle vehicle){
         if (lot.getCapacity() > lot.getOccupiedSpaces() ){
             lot.setOccupiedSpaces(lot.getOccupiedSpaces() + 1);
@@ -40,19 +44,19 @@ public class ParkingLotService {
             if (!ticketIsValid(vehicle)){
                 Ticket ticket = new Ticket(vehicle.getNumberPlate(), LocalDateTime.now());
                 if (vehicle.getTickets().isEmpty()){
-                    vehicle.setTicket(Optional.of(new ArrayList<>(List.of(ticket))));
+                    vehicle.setTicket(new ArrayList<>(List.of(ticket)));
                 }
                 else {
-                    ArrayList<Ticket> tickets = vehicle.getTickets().get();
+                    ArrayList<Ticket> tickets = vehicle.getTickets();
                     tickets.add(ticket);
-                    vehicle.setTicket(Optional.of(tickets));
+                    vehicle.setTicket(tickets);
                 }
             }
         }
     }
 
     public boolean ticketIsValid(Vehicle vehicle){
-        if (LocalDateTime.now().isAfter(vehicle.getTimPaidUntil())){
+        if (LocalDateTime.now().isAfter(vehicle.getTimePaidUntil())){
             return false;
         }
         else {
